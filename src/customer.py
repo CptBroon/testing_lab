@@ -1,4 +1,4 @@
-class Customer(self, name, wallet):
+class Customer:
     
     def __init__(self, name, wallet):
         self.name = name
