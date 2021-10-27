@@ -19,3 +19,7 @@ class TestCustomer(unittest.TestCase):
     def test_customer_remove_amount(self):
         self.customer.remove_amount(10)
         self.assertEqual(40, self.customer.wallet)
+        
+    def test_increase_drunkenness(self):
+        self.customer.increase_drunkenness(4)
+        self.assertEqual(4, self.customer.drunkenness_level)

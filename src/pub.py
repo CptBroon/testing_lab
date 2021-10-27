@@ -16,10 +16,12 @@ class Pub:
         self.till += amount
         
     def sell_drink(self, customer, drink):
-        if self.check_customer_over_18(customer.age) == True:
-            if self.can_customer_afford_drink(customer, drink) == True:
-                self.add_amount_to_till(drink.price)
-                customer.remove_amount(drink.price)
+        if customer.drunkenness_level < 10:
+            if self.check_customer_over_18(customer.age) == True:
+                if self.can_customer_afford_drink(customer, drink) == True:
+                    self.add_amount_to_till(drink.price)
+                    customer.remove_amount(drink.price)
+                    customer.increase_drunkenness(drink.alcohol_level)
             
     def check_customer_over_18(self, customer):
         if customer.age >= 18:

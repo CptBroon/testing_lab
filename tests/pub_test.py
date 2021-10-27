@@ -6,9 +6,9 @@ class TestPub(unittest.TestCase):
     
     def setUp(self):
         self.customer = Customer("Keith", 50, 49)
-        self.drink1 = Drink("Sex on the beach", 15)
-        self.drink2 = Drink("Tennets", 4)
-        self.drink3 = Drink("White wine", 6)
+        self.drink1 = Drink("Sex on the beach", 15, 3)
+        self.drink2 = Drink("Tennets", 4, 1)
+        self.drink3 = Drink("White wine", 6, 2)
         drinks_list = [self.drink1, self.drink2, self.drink3]
         self.pub = Pub("The Winchester", 1000, drinks_list)
         
@@ -34,9 +34,11 @@ class TestPub(unittest.TestCase):
         
         self.customer.remove_amount(self.drink1.price)
         self.pub.add_amount_to_till(self.drink1.price)
+        self.customer.increase_drunkenness(self.drink1.alcohol_level)
         
         self.assertEqual(35, self.customer.wallet)
         self.assertEqual(1015, self.pub.till)
+        self.assertEqual(3, self.customer.drunkenness_level)
         
     def test_check_customer_over_18(self):
         self.assertEqual(True, self.pub.check_customer_over_18(self.customer))
