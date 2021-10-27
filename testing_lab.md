@@ -18,7 +18,7 @@ MVP:
 
   - A `Pub` should have a `name`, a `till`, and a collection of `drinks`
   <!-- - A `Drink` should have a `name`, and a `price` - done -->
-  - A `Customer` should have a `name`, and a `wallet`
+  <!-- - A `Customer` should have a `name`, and a `wallet`  - done -->
   - A `Customer` should be able to buy a `Drink` from the `Pub`, reducing the money in its `wallet` and increasing the money in the `Pub`'s `till`
 
 Extensions:
