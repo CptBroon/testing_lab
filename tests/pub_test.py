@@ -1,5 +1,5 @@
 import unittest
 # import pub
 
-class TestPub:
+class TestPub(unittest.TestCase):
     pass

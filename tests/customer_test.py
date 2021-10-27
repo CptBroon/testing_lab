@@ -1,4 +1,4 @@
 import unittest
 
-class TestCustomer:
+class TestCustomer(unittest.TestCase):
     pass
