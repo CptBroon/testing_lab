@@ -5,7 +5,7 @@ from src.drink import *
 class TestPub(unittest.TestCase):
     
     def setUp(self):
-        self.customer = Customer("Keith", 50)
+        self.customer = Customer("Keith", 50, 49)
         self.drink1 = Drink("Sex on the beach", 15)
         self.drink2 = Drink("Tennets", 4)
         self.drink3 = Drink("White wine", 6)
@@ -38,3 +38,5 @@ class TestPub(unittest.TestCase):
         self.assertEqual(35, self.customer.wallet)
         self.assertEqual(1015, self.pub.till)
         
+    def test_check_customer_over_18(self):
+        self.assertEqual(True, self.pub.check_customer_over_18(self.customer))
